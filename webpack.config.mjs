@@ -14,12 +14,17 @@ export default (env, argv) => {
       output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: "/"
+        publicPath: "/",
+        clean: true 
       },
       mode: "production",
       plugins: [
         new HtmlWebpackPlugin({
           template: "./src/index.html"
+        }),
+        new HtmlWebpackPlugin({
+          template: "./src/pages/game.html",
+          filename: "game.html"
         })
       ],
       module: {
@@ -49,12 +54,17 @@ export default (env, argv) => {
       output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: "/"
+        publicPath: "/",
+        clean: true 
       },
       mode: "development",
       plugins: [
         new HtmlWebpackPlugin({
           template: "./src/index.html"
+        }),
+        new HtmlWebpackPlugin({
+          template: "./src/pages/game.html",
+          filename: "game.html"
         })
       ],
       module: {

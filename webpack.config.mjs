@@ -61,10 +61,6 @@ export default (env, argv) => {
       plugins: [
         new HtmlWebpackPlugin({
           template: "./src/index.html"
-        }),
-        new HtmlWebpackPlugin({
-          template: "./src/pages/game.html",
-          filename: "game.html"
         })
       ],
       module: {

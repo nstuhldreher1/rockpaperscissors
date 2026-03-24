@@ -2,15 +2,15 @@ const template = document.createElement("template");
 template.innerHTML = `
   <style>
     .sr-only {
-        position: absolute;   /* Take it out of normal flow */
-        width: 1px;           /* Very small width */
-        height: 1px;          /* Very small height */
+        position: absolute;  
+        width: 1px;           
+        height: 1px;         
         padding: 0;
-        margin: -1px;         /* Hide it visually */
-        overflow: hidden;     /* Clip content */
-        clip: rect(0, 0, 0, 0); /* Old browsers */
-        clip-path: inset(50%); /* Modern browsers */
-        white-space: nowrap;   /* Prevent wrapping */
+        margin: -1px;        
+        overflow: hidden;     
+        clip: rect(0, 0, 0, 0); 
+        clip-path: inset(50%); 
+        white-space: nowrap;   
         border: 0;
     }
     .rps-score {
@@ -21,6 +21,7 @@ template.innerHTML = `
             grid-area: content;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            margin: 1rem;
         }
         .rps-score__player-score{
             justify-self: start;

@@ -28,7 +28,7 @@ template.innerHTML = `
             A realtime WebSocket game — pick rock, paper, or scissors and play 
             against another player online. Start the game and send the oponent the link to play. The first player to win 3 rounds wins the game.
         </p>
-        <a class="rps-intro__button" href="/game.html">Start Game</a>
+        <button class="rps-intro__button">Start Game</button>
     </div>
   </div>
 `;
@@ -36,15 +36,34 @@ class Intro extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    this.selectors = {
+        button: ".rps-intro__button",
+        gameContainer: "game-container",
+        intro: ".rps-intro"
+    };
   }
 
   connectedCallback() {
     this.render();
+    this.setupEventListeners();
   }
 
   render() {
     let clone = template.content.cloneNode(true);
     this.shadowRoot.append(clone);
+  }
+  
+  startGame() { 
+    this.style.display = "none";
+    document.getElementById(this.selectors.gameContainer).classList.remove("hidden");
+  }
+  setupEventListeners() {
+      const button = this.shadowRoot.querySelector(this.selectors.button);
+
+      //TODO: append link with game id, hide intro and show game components, and create a game instance on the server.
+      button.addEventListener("click", () => {
+          this.startGame();
+      });
   }
 }
 

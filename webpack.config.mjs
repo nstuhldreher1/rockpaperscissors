@@ -22,10 +22,6 @@ export default (env, argv) => {
         new HtmlWebpackPlugin({
           template: "./src/index.html"
         }),
-        new HtmlWebpackPlugin({
-          template: "./src/pages/game.html",
-          filename: "game.html"
-        }),
       ],
       module: {
         rules: [

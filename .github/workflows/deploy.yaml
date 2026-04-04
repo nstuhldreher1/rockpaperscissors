@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v6.1.0
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{secrets.AWS_IAM_ROLE}}
           aws-region: us-east-2

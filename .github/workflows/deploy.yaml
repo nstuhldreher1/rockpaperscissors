@@ -27,4 +27,5 @@ jobs:
               "npm run build",
               "sudo systemctl restart nginx",
               "sudo systemctl restart fastapi"
-            ]'
+            ]' \
+            --region us-east-2
